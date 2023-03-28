@@ -1,0 +1,15 @@
+body {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.head {
+    width: 550px;
+    height: 65px;
+    background-color: purple;
+}
+
+.troll {
+    width: 30px;
+    height: 26px;
+}
