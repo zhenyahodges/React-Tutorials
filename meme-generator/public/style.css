@@ -4,12 +4,63 @@ body {
 }
 
 .head {
-    width: 550px;
+    width: 100%;
+    margin: 0 auto;
     height: 65px;
-    background-color: purple;
+    background-color: #672280;
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: space-around; */
+    align-items: center;
+    padding: 20px;
 }
 
 .troll {
     width: 30px;
-    height: 26px;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.title {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.headProject {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.form {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.form-btn {
+    width: 100%;
+    height: 50px;
+    background-color: #672280;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    
+}
+
+.form-input {
+    flex: 1 1 auto;
+    height: 45px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border:2px solid #D5D4D8;
+}
+
+.form-input-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.meme {
+    margin: 40px auto;
 }
