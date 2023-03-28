@@ -1,4 +1,3 @@
-// import memeimg from './memeimg.png';
 import memesData from '../memesData';
 import { useState } from 'react';
 
