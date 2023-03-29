@@ -2,18 +2,31 @@ import memesData from '../memesData';
 import { useState } from 'react';
 
 export default function Meme() {
-    const [memeImage,setMemeImage]=useState('');
+    // const [memeImage,setMemeImage]=useState("http://i.imgflip.com/1bij.jpg");
+
+    const [meme,setMeme]=useState({
+        topText:'',
+        bottomText:'',
+        randomImage:"http://i.imgflip.com/1bij.jpg"});   
+    // const meme={topText,bottomText,randomImage};
+    
+    const [allMemeImages,setAllMemeImages]=useState(memesData);
 
     function getMemeImage() {
-        const memesArray= memesData.data.memes;
+        const memesArray= allMemeImages.data.memes;
         const randomNum= Math.floor(Math.random()*memesArray.length);
-        const meme=memesArray[randomNum].url;
-        setMemeImage(prevMeme=>prevMeme=meme);
-        // return memeImage;
+        const url=memesArray[randomNum].url;
+        
+        setMeme(prevMeme=>({
+            ...prevMeme,
+            randomImage:url            
+        }));     
     }
+
     function hadnleMouseOverImg() {
         // console.log('mouseover');
     }
+
     return (
         <main>
             <div className='form'>
@@ -35,7 +48,7 @@ export default function Meme() {
                 <button className='form-btn' onClick={getMemeImage}>
                     Get a new meme image
                 </button>
-                <img src={memeImage} className='meme' onMouseOver={hadnleMouseOverImg}></img>
+                <img src={meme.randomImage} className='meme' onMouseOver={hadnleMouseOverImg}></img>
             </div>
         </main>
     );
