@@ -2,24 +2,25 @@ import memesData from '../memesData';
 import { useEffect, useState } from 'react';
 
 export default function Meme() {
-
     const [meme, setMeme] = useState({
         first: '',
         second: '',
         randomImage: 'http://i.imgflip.com/1bij.jpg',
     });
-    
+
     const [allMemes, setAllMemes] = useState([]);
 
-   useEffect(() => {
-        fetch('https://api.imgflip.com/get_memes')
-            .then(res => res.json())
-            .then(data => setAllMemes(data.data.memes));
+    useEffect(() => {
+        async function getMemes() {
+            const res = await fetch('https://api.imgflip.com/get_memes');
+            const data = await res.json();
+            setAllMemes(data.data.memes);
+        }
+        getMemes();
     }, []);
 
-
     function getMemeImage() {
-         const randomNum = Math.floor(Math.random() * allMemes.length);
+        const randomNum = Math.floor(Math.random() * allMemes.length);
         const url = allMemes[randomNum].url;
 
         setMeme((prevMeme) => ({
@@ -28,12 +29,11 @@ export default function Meme() {
         }));
     }
 
-
     function handleChange(event) {
-        const {name, value} = event.target;
-        setMeme(prevMeme => ({
+        const { name, value } = event.target;
+        setMeme((prevMeme) => ({
             ...prevMeme,
-            [name]: value
+            [name]: value,
         }));
     }
     // function hadnleMouseOverImg() {
@@ -49,7 +49,7 @@ export default function Meme() {
                         className='form-input first'
                         type='text'
                         placeholder=' shut up'
-                        name="first"
+                        name='first'
                         value={meme.first}
                         onChange={handleChange}
                     ></input>
@@ -58,9 +58,9 @@ export default function Meme() {
                         className='form-input second'
                         type='text'
                         placeholder=' and take my money'
-                        name="second"
-                    value={meme.second}
-                    onChange={handleChange}
+                        name='second'
+                        value={meme.second}
+                        onChange={handleChange}
                     ></input>
                 </div>
 
