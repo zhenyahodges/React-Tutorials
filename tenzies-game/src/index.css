@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sq-outer {
+  width: 360px;
+  height: 380px;
+  background-color: #0B2434;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5% auto;
+}
+
+.sq-inner {
+  width: 320px;
+  height: 320px;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 36px;
+  text-align: center;
+
+}
+
+.text {
+  color: #4A4E74;
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 40px;
+}
+
+.square {
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.square-special {
+  background-color: #59E391;
+}
+
+button {
+  background-color: #5035FF;
+  width: 92px;
+  height: 36px;
+  padding: 5px 6px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5% 35%;
+}
+
+.nums {
+  /* display: flex;
+  flex-flow: row wrap; */
+  justify-content: center;
+}
+
+.squares {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  margin: 0 10px;
+
+}
